@@ -34,7 +34,7 @@ List of some implemented commands:
 
 ## Security
 
-* Drive-WebCLI does NOT save any information about users' Google Drive accounts or content.
+* Drive-WebCLI does NOT save any information about users' Google Drive accounts or content.  All functionality is implemented through in-webpage document parsing.  However, this approach is fragile to structural Google Drive updates; bug reports are very welcome!
 * Chrome Extension permissions requested and purpoes (see Google Chrome Extensions documentation for more details): "scripting" - to start and run Drive-WebCLI.  You can verify permissions by viewing the `manifest.json` file.
 * We are open-source to ensure safe and secure application usage. Be wary of non-open-source Chrome Extensions for malicious behavior.
 
