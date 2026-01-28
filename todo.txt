@@ -1,5 +1,6 @@
 Suggestions welcome!  Please open an Issue to recommend a feature or report a bug, or create a PR updating this file.
 
+- fix `cd ~` inconsistency, add `cd`=`cd ~`
 - .. support for ls command
 - autocomplete commands, files
 - all commands: relative and absolute path support
