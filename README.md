@@ -1,6 +1,6 @@
 # Drive-WebCLI
 
-![Drive-WebCLI Logo](images/logo.png)
+<img src="images/logo.png" alt="Drive-WebCLI Logo" width="50%"/>
 
 A light-weight Chrome Extension enabling an in-browser CLI for Google Drive.
 
@@ -40,8 +40,8 @@ List of some implemented commands:
 
 ## Contributing
 
-Suggestions are welcome!  Please open an Issue to recommend a feature or report a bug, or submit a PR directly to the `todo.txt` file if you really want to.
+Suggestions are welcome!  Please open an Issue to recommend a feature or report a bug, or submit a PR directly to the `todo.txt` file if you really want to!
 
 ## License
 
-Apache 2.0 License
+Apache 2.0 License (see `LICENSE.txt`)
