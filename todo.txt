@@ -1,6 +1,7 @@
-Suggestions welcome!  Please open an Issue to recommend a feature or report a bug.
+Suggestions welcome!  Please open an Issue to recommend a feature or report a bug, or create a PR updating this file.
 
 - .. support for ls command
+- autocomplete commands, files
 - all commands: relative and absolute path support
 - save terminal window position and size preference in storage, opacity too
 - resizing from all four sides, + bottom right corner
