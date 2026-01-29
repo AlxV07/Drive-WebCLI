@@ -21,6 +21,8 @@ Ctrl+E / Control+E (Mac) toggles terminal visibility.  The terminal interface is
 
 Entering `help` displays currently implemented commands and their respective usages.
 
+For files or folders with names containing spaces, use quotes (e.g. `cd "A Folder With Spaces"`).
+
 List of some implemented commands:
 * `ls [optional:path]` - List all files in the current Drive folder or folder specified at path (relative or starting from root `~`).
 * `cd [path]` - Open the given Driven folder at the given path (relative to the current Drive folder or starting from root `~`).
