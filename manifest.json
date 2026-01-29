@@ -2,10 +2,18 @@
   "manifest_version": 3,
   "name": "Drive-WebCLI",
   "description": "A light-weight Chrome Extension enabling an in-browser CLI for Google Drive. Open-source at: https://github.com/AlxV07/Drive-WebCLI",
-  "version": "1.0",
-  "permissions": ["scripting"],
-	"content_scripts": [{"matches": ["https://drive.google.com/*"], "js": ["content.js"], "run_at": "document_end"}],
-	"web_accessible_resources": [{"resources": ["content.js"], "matches": ["<all_urls>"]}],
+  "version": "1.1",
+  "permissions": ["scripting", "storage"],
+	"content_scripts": [
+    {
+      "matches": ["https://drive.google.com/*"],
+      "js": [
+        "js/commands.js",
+        "js/ui.js"
+      ],
+       "run_at": "document_end"
+    }
+  ],
   "icons": {
     "16": "images/logo.png",
     "32": "images/logo.png",
