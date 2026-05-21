@@ -183,7 +183,7 @@ async function ls_func(path) {
       skipFirst = false;
       continue;
     }
-    const part = parts[i].trim();
+    const part = parts[i];
     if (part === ".") {
       continue;
     } else if (part === "..") {
@@ -251,7 +251,6 @@ async function cd_func(path) {
       skipFirst = false;
       continue;
     }
-    part = part.trim();
     if (part === ".") {
       continue;
     } else if (part === "..") {
@@ -535,25 +534,26 @@ async function handleCommand(command, terminalBody) {
     command = 'cd ..';
   }
   cur_cmd_idx = 0;
-  // args are split like file names; if in quotes, keep spaces
-  const [c, ...args] = command.match(/(?:[^\s"]+|"[^"]*")+/g).map(arg => arg.replace(/(^"|"$)/g, ''));
+  let c, arg;
+  const firstSpace = command.indexOf(' ');
+  if (firstSpace === -1) {
+    c = command;
+    arg = null;
+  } else {
+    c = command.substring(0, firstSpace);
+    arg = command.substring(firstSpace + 1);
+  }
+
   switch (c) {
     case 'help':
       help_func();
       break;
     case 'ls':
-      if (args.length !== 1 && args.length !== 0) {
-        logOutput("Usage: ls [optional:path]", "red");
-      }
-      await ls_func(args[0]);
-      break;  
-    case 'cd':
-      if (args.length !== 1 && args.length !== 0) {
-        logOutput("Usage: cd [optional:path]", "red");
-      }
-      await cd_func(args[0]);
+      await ls_func(arg);
       break;
-    case 'open':
+    case 'cd':
+      await cd_func(arg);
+      break;    case 'open':
       if (args.length !== 1) {
         logOutput("Usage: open [file]", "red");
       } else {

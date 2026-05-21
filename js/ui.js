@@ -44,7 +44,7 @@ function injectTerminal() {
   `;
 
   const title = document.createElement('span');
-  title.textContent = 'Drive-WebCLI v1.0';
+  title.textContent = 'Drive-WebCLI v1.2';
   title.style.cssText = `
     color: #ffcc00;
     font-weight: bold;
@@ -87,7 +87,7 @@ function injectTerminal() {
 
   const welcomeMessage = document.createElement('div');
   welcomeMessage.innerHTML = `
-    <div style="color: #ffcc00;">Drive-WebCLI v1.0</div>
+    <div style="color: #ffcc00;">Drive-WebCLI v1.2</div>
     <div style="color: #ffcc00;">Ctrl+E to toggle terminal window visibility</div>
     <div style="color: #ffcc00;">'help' for available commands</div>
     <br>
@@ -167,7 +167,7 @@ function injectTerminal() {
         }
         if (words.length === 1) {
           const commands = ['help', 'clear', 'opacity', 'ls', 'cd', 'open', 'rename', 'rm', 'new', 'upload', 'download'];
-          const matchingCommands = commands.filter(cmd => cmd.startsWith(words[0]));
+          const matchingCommands = commands.filter(cmd => cmd.includes(words[0]));
           if (matchingCommands.length > 0) {
             commandInput.value = matchingCommands[0];
             return;
@@ -187,8 +187,8 @@ function injectTerminal() {
             allFiles = ls_impl(doc);
           }
         }
-        const lastWordOnly = parts[parts.length - 1];
-        const matchingFiles = allFiles.filter(file => file.name.startsWith(lastWordOnly));
+        const lastWordOnly = parts[parts.length - 1].toLowerCase();
+        const matchingFiles = allFiles.filter(file => file.name.toLowerCase().includes(lastWordOnly));
         if (matchingFiles.length > 0) {
           commandInput.value = words.slice(0, words.length - 1).join(' ') + ' ' +
             (parts.length > 1 ? parts.slice(0, parts.length - 1).join('/') + '/' : '') +
@@ -318,7 +318,7 @@ function toggleTerminal() {
 function injectIndicator() {
   const indicator = document.createElement('div');
   indicator.id = 'drive-webcli-indicator';
-  indicator.textContent = '  Drive-WebCLI v1.0 - Enabled\n   Toggle View: Ctrl+E';
+  indicator.textContent = '  Drive-WebCLI v1.2 - Enabled\n   Toggle View: Ctrl+E';
   indicator.style.cssText = `
     white-space: pre-wrap;
     position: fixed;
@@ -343,6 +343,6 @@ function injectIndicator() {
 function main() {
   injectTerminal();
   injectIndicator();
-  console.log("Drive-WebCLI v1.0 Enabled.");
+  console.log("Drive-WebCLI v1.2 Enabled.");
 }
 main();

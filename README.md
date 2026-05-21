@@ -21,11 +21,11 @@ Ctrl+E / Control+E (Mac) toggles terminal visibility.  The terminal interface is
 
 Entering `help` displays currently implemented commands and their respective usages.
 
-For files or folders with names containing spaces, use quotes (e.g. `cd "A Folder With Spaces"`).
+For files or folders with names containing spaces, you can use the path directly without quotes for `ls` and `cd` (e.g. `cd A Folder With Spaces`).
 
 List of some implemented commands:
-* `ls [optional:path]` - List all files in the current Drive folder or folder specified at path (relative or starting from root `~`).
-* `cd [path]` - Open the given Driven folder at the given path (relative to the current Drive folder or starting from root `~`).
+* `ls [optional:path]` - List all files in the current Drive folder or folder specified at path (relative or starting from root `~`). Path can contain spaces without quotes.
+* `cd [path]` - Open the given Driven folder at the given path (relative to the current Drive folder or starting from root `~`). Path can contain spaces without quotes.
 * `open [file]` - Open a file or folder in the current Drive folder (follows default Drive behavior when deciding to open in a new tab or the current one).
 * `rename [old] [new]` - Rename a file or folder in the current Drive folder.
 * `rm [file1 file2 file3 ...]` - Remove all listed files or folders from the current Drive folder, in order of first occurence.
@@ -34,7 +34,7 @@ List of some implemented commands:
 * `opacity [value]` - Set the opacity of the terminal; takes a float value from `0.0 (transparent)` to `1.0 (solid black)`.
 * `help` - Display the help page containing all implemented commands and usages.
 
-Tab completion is implemented for commands and files (limited functionality for files outside of current Drive folder and files with spaces in name).
+Tab completion is implemented for commands and files (case-insensitive).
 
 Command history stores up to 50 previous commands using local storage.
 
@@ -45,6 +45,10 @@ Command history stores up to 50 previous commands using local storage.
 * We are open-source to ensure safe and secure application usage. Be wary of non-open-source Chrome Extensions for malicious behavior.
 
 ## Update Log
+
+### v1.2
+- feat: update tab-completion to be case-insensitive for filenames and directories
+- feat: `ls` and `cd` now support paths with spaces without requiring quotes (splitting strictly by `/`)
 
 ### v1.1
 - refactor: split single content script into modularized files (commands + ui)

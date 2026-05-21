@@ -1,6 +1,5 @@
 Suggestions welcome!  Please open an Issue to recommend a feature or report a bug, or create a PR updating this file.
 
-- handle tab file auto complete for folders / files w/ whitespace (need quotes)
 - use id-system parallel to naming (to handle same-name corner cases) e.g. cd [name|id]
 - all commands: relative and absolute path support
 - save terminal window position and size preference in storage, opacity too
@@ -8,4 +7,4 @@ Suggestions welcome!  Please open an Issue to recommend a feature or report a bu
 - tree command?  would need to specify nof layers to ensure no request spam
 - handle execution in other roots e.g. Shared w/ Me, Trash
 - alias: local storage, define commands / arguments / locations
-- post: motivation; no-credential, install-and-go
+
